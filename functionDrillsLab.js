@@ -35,7 +35,7 @@ let jsNinja = () => {
 }
 
 jsNinja()
-console.log(jsNinja())
+// console.log(jsNinja())
 
 ////////////////// PROBLEM 3 ////////////////////
 /*
@@ -95,7 +95,7 @@ let compareNums = (num1, num2) => {
 }
 
 compareNums(3, 6, 8)
-console.log(compareNums(3, 6, 8))
+// console.log(compareNums(3, 6))
 
 
 ////////////////// PROBLEM 6 ////////////////////
@@ -119,9 +119,9 @@ function add(num1, num2) {
 }
 
 add(3, '8')
-console.log(sum)
+// console.log(sum)
 add(4, 3)
-console.log(sum)
+// console.log(sum)
 
 ////////////////// PROBLEM 7 ////////////////////
 
@@ -147,11 +147,11 @@ console.log('expression')
   Uncomment the correct `console.log` underneath.
 */
 
-const exclaimTwo = str => {
-  return str.toUpperCase() + '!!!'
-}
+// const exclaimTwo = str => {
+//   return str.toUpperCase() + '!!!'
+// }
 
-// console.log('arrow')
+console.log('arrow')
 // console.log('declaration')
 // console.log('expression')
 
@@ -161,6 +161,11 @@ const exclaimTwo = str => {
 
   Brownie points if you use a template string
 */
+
+const exclaimTwo = str => `${str.toUpperCase()}!!!`
+
+exclaimTwo('hello')
+console.log(exclaimTwo('hello'))
 
 
 
@@ -176,103 +181,214 @@ function exclaimFour(str) {
 }
 
 // console.log('arrow')
-// console.log('declaration')
+console.log('declaration')
 // console.log('expression')
 
 
 ////////////////// PROBLEM 10 ////////////////////
 /*
-  Write a function called nameCheck that takes in a name parameter.
-  nameCheck should check if the name equals 'Steven'. If it does, return 'What is up Steven?'
+  Write a function called nameCheck that takes in a name 
+  parameter.
+  nameCheck should check if the name equals 'Steven'. If 
+  it does, return 'What is up Steven?'
   If the name parameter is equal to Bryan, return 'Hey Bryan!'
-  If the name parameter is anything else, return 'Cool name, NAMEPARAM' (with NAMEPARAM being the value of the name parameter being passed in).
-  Create a variable called 'nameGreeting' and set it equal to your function invoked (called) passing in an argument.
+  If the name parameter is anything else, return 
+  'Cool name, NAMEPARAM' (with NAMEPARAM being the value 
+    of the name parameter being passed in).
+  Create a variable called 'nameGreeting' and set it equal 
+  to your function invoked (called) passing in an argument.
 */
 
 //CODE HERE
+
+let nameGreeting = nameCheck('Steven')
+
+function nameCheck(name){
+  if (name === 'Steven') {
+    return 'What is up Steven?'
+  } else if (name === 'Bryan') {
+    return 'Hey Bryan!'
+  } else {
+    return `Cool name, ${name}`
+  }
+}
+
+// nameCheck('Noah')
+// console.log(nameCheck('Noah'))
+// console.log(nameGreeting)
 
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
-  Write a function called faveColorFinder that takes in one parameter called color (which will be a string).
-  If the passed in color equals 'red', return 'red is a great color'
-  If the passed in color equals 'green', return 'green is a solid favorite color'
+  Write a function called faveColorFinder that takes in one
+   parameter called color (which will be a string).
+  If the passed in color equals 'red', return 'red is a great
+   color'
+  If the passed in color equals 'green', return 'green is a 
+  solid favorite color'
   If the passed in color equals 'black', return 'so trendy'
-  Otherwise, you should return the string 'you need to evaluate your favorite color choice'
-  Create a variable called 'colorRating' and set it equal to faveColorFinder invoked (called), passing in an argument.
+  Otherwise, you should return the string 'you need to evaluate
+   your favorite color choice'
+  Create a variable called 'colorRating' and set it equal to 
+  faveColorFinder invoked (called), passing in an argument.
 */
 
 //CODE HERE
 
+let colorRating = faveColorFinder('green')
+
+function faveColorFinder(color) {
+  return color === 'red' ? 'red is a great color' :
+         color === 'green' ? 'green is a solid favorite color' :
+         color === 'black' ? 'so trendy' : 'you need to evaluate your favorite color choice'
+}
+
+faveColorFinder('green')
+// console.log(faveColorFinder('blue'))
+// console.log(colorRating)
 
 ////////////////// PROBLEM 12 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 /*
-  Create a function called printAllNames that takes in a single argument (an array of names).
-  Using a for loop, iterate over that array and console log each name.
+  Create a function called printAllNames that takes in a 
+  single argument (an array of names).
+  Using a for loop, iterate over that array and console 
+  log each name.
   Call the function, passing in the `namesArr` array (above).
 */
 
 //CODE HERE
 
+function printAllNames(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i])
+  }
+}
+
+printAllNames(namesArr)
+
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
-  Create a function called thatsOdd that takes in a single argument (a number).
-  Using conditional logic, if the number is even, return 'That's not odd!'
+  Create a function called thatsOdd that takes in a single
+   argument (a number).
+  Using conditional logic, if the number is even, return 
+  'That's not odd!'
   Otherwise, return 'That is odd indeed!'
-  Outside the function, create a variable called `oddChecker` and set it equal to your function invoked, making sure to pass in an argument.
+  Outside the function, create a variable called `oddChecker` 
+  and set it equal to your function invoked, making sure to 
+  pass in an argument.
 */
 
 //CODE HERE
+
+let oddChecker = thatsOdd(5)
+function thatsOdd(num) {
+  return num % 2 === 0 ? `That's not odd!` : 'That is odd indeed!'
+}
+
+thatsOdd(5)
+// console.log(oddChecker)
 
 
 ////////////////// PROBLEM 14 ////////////////////
 
 /*
-    Write a one line arrow function called 'bestMovie' that takes in one parameter,
+    Write a one line arrow function called 'bestMovie' that 
+    takes in one parameter,
     which will be a string of a movie title. 
-    The function should return the string: 'MOVEIEPARAM is the best movie ever!'. 
+    The function should return the string: 'MOVEIEPARAM is 
+    the best movie ever!'. 
     For example, if we passed in 'Sharknado', 
-    we would expect the function to return 'Sharknado is the best movie ever!'
+    we would expect the function to return 'Sharknado is 
+    the best movie ever!'
 */
 
 //CODE HERE
+
+let bestMovie = movie => `${movie} is the best movie ever!`
+
+bestMovie('Zoolander')
+// console.log(bestMovie('Zoolander'))
 
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 /* 
-  Create a function called 'bigOrSmall' that takes in one parameter, 'arr',  which will be an array of numbers. 
-  Inside of the bigOrSmall function, create a new array called 'answers'. 
-  Then, loop over the passed in arr parameter, and check to see if the number in the array is GREATER than 100. 
+  Create a function called 'bigOrSmall' that takes in one 
+  parameter, 'arr',  which will be an array of numbers. 
+  Inside of the bigOrSmall function, create a new array 
+  called 'answers'. 
+  Then, loop over the passed in arr parameter, and check 
+  to see if the number in the array is GREATER than 100. 
   If it is, push 'big' as a string to the answers array. 
-  If the number is LESS than or EQUAL to 100, push 'small' as a string to the answers array. 
-  Return the answers array inside of the function to a variable called `arrayEvaluator`.
+  If the number is LESS than or EQUAL to 100, push 'small' 
+  as a string to the answers array. 
+  Return the answers array inside of the function to a 
+  variable called `arrayEvaluator`.
 */
 
 //CODE HERE
+
+function bigOrSmall(arr) {
+  let answers = []
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      answers.push('big')
+    } else {
+      answers.push('small')
+    }
+  }
+  return answers
+}
+
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
+console.log(arrayEvaluator)
 
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
 /*
-  Write a function that is called theEliminator, which takes in two arguments, contestants (which will each be an array of strings), and loser (which will be a string).
-  The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
+  Write a function that is called theEliminator, which takes 
+  in two arguments, contestants (which will each be an array 
+    of strings), and loser (which will be a string).
+  The function should loop over the array of contestant names. 
+  If the loser string appears in the array, splice it out. 
+  Return the new contestants array.
 */
 
 //CODE HERE
+
+function theEliminator(arr, str) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === str) {
+      arr.splice([i],1)
+    }
+  }
+  return arr
+}
+
+theEliminator(contestants, loser)
+console.log(theEliminator(contestants, loser))
 
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
-  Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
+  Write a function that takes in one argument, a string. 
+  The function should then console.log that string, in 
+  entirely uppercase characters.
   Invoke the function, passing in the sampleString (above).
 */
 
 //CODE HERE
+
+function sample(str) {
+  console.log(str.toUpperCase())
+}
+
+sample(sampleString)
 
 
 ////////////////// PROBLEM 18 ////////////////////
@@ -286,13 +402,38 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+function emailCheck(email) {
+  String(email).trim()
+  if (email.includes('@')) {
+    return 'email verified'
+  } else {
+    return 'must provide a valid email address'
+  }
+}
+
+emailCheck('me@yahoo.com')
+console.log(emailCheck('me@yahoo.com'))
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
-  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
-  Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
+  Write a function, naming it whatever you believe to be 
+  appropriate, that buys as many chocolate frogs as possible 
+  with a certain amount of gold. Each chocolate frog costs 
+  3 gold. Your function should take in a single parameter, 
+  which is the amount of gold you are willing to spend. Your 
+  function should return a total amount of chocolate frogs 
+  you were able to purchase.
+  Create a variable called `totalFrogs` and set it equal to 
+  your function invoked, passing in the amount of gold you 
+  are willing to spend.
 */
 
 //CODE HERE
+
+function buyChocolate(budget) {
+  let chocolateFrog = 3
+  budget -= 
+}
 
 
 ////////////////// PROBLEM 20 ////////////////////
