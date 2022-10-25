@@ -431,26 +431,66 @@ console.log(emailCheck('me@yahoo.com'))
 //CODE HERE
 
 function buyChocolate(budget) {
-  let chocolateFrog = 3
-  budget -= 
+  let totalBought = budget / 3
+  return `You were able to buy ${totalBought} chocolate frogs!`
 }
+
+let totalFrogs = buyChocolate(35)
+console.log(totalFrogs)
+
 
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
-  You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
+  You might have noticed a slight bug in the previous 
+  problem. If you were to pass in 4 gold, the function 
+  would return to you 1.3333... However, you can't really 
+  go to a store and by 1.333 products. You would just be
+   able to purchase 1 product. Re-write the function you 
+   used in the previous problem (give it the same name, 
+    just add a 2 to the end of it) that fixes this bug. 
+    Invoke the function and store the returned value to a 
+    variable called `totalFrogs2`.
 */
 
 //CODE HERE
+
+function buyChocolate2(budget) {
+  let totalBought = Math.floor(budget / 3)
+  return `You were able to buy ${totalBought} chocolate frogs!`
+}
+
+let totalFrogs2 = buyChocolate2(28)
+console.log(totalFrogs2)
 
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 /*
-  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
+  Write a function that takes in an array of numbers as 
+  an argument. In the body of the function, write logic 
+  to determine if the array is in ascending order. The 
+  function should return true, if it is sorted in ascending 
+  order, false if it is not. Create a variable, 
+  `arrayIsAscending` and set it equal to your function 
+  invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
+
+function sortArray(arr) {
+  let j
+  for (let i = 0; i < arr.length; i++) {
+    j = i + 1
+    if (arr[j] - arr[i] < 0) {
+      return false
+    }
+    return true
+  }
+}
+
+let arrayIsAscending = sortArray(sampleArray)
+console.log(arrayIsAscending)
 
 
 ////////////////// PROBLEM 22 ////////////////////
@@ -471,17 +511,22 @@ function pond() {
 /*
   There are 4 variables above: duck, rubberDuck, sailorDuck and realDuck.
   All within different scopes.
-  Given the functions and variables above, edit the arrays below to contain only the appropriate variable names (as strings).
+  Given the functions and variables above, edit the arrays below to 
+  contain only the appropriate variable names (as strings).
 */
 
-//This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+//This array should contain the variable names (as strings) accessible in 
+// the global scope.
+let globalScope = ['duck']
 
-//This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+//This array should contain the variable names (as strings) accessible in 
+// the bathroom function.
+let bathroomScope = ['squeaky', 'duck']
 
-//This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+//This array should contain the variable names (as strings) accessible in 
+// the bathtub function.
+let bathtubScope = ['nautical', 'squeaky', 'duck']
 
-//This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+//This array should contain the variable names (as strings) accessible in 
+// the pond function.
+let pondScope = ['fluffy', 'duck']
